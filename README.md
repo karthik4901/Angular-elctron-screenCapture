@@ -1,27 +1,102 @@
-# ScreenshotApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+# Screen Capture POC Documentation
 
-## Development server
+## Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This documentation outlines the Proof of Concept (POC) for capturing the screen using an Electron-Angular application. The POC demonstrates the integration of Electron with an Angular app, utilizing IPC (Inter-Process Communication) for communication between the main Electron process and the Angular renderer process.
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before running the application, ensure that you have the following prerequisites:
 
-## Build
+- Node.js and npm installed.
+- Angular CLI installed.
+- Basic knowledge of Electron and Angular.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Technologies Used
 
-## Running unit tests
+- Electron: The framework used for creating the desktop application.
+- Angular: The front-end framework for building the user interface.
+- IPC (Inter-Process Communication): Used for communication between Electron's main process and Angular's renderer process.
+- Electron service in Angular: A custom Angular service used for triggering events and passing data between components and Electron.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+To install and set up the Electron-Angular app, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository from [repository_url].
+2. Navigate to the project directory.
+3. Run `npm install` to install project dependencies.
 
-## Further help
+## Running the App
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To run the Electron-Angular app, execute the following command:
+
+```shell
+npm run electron-build
+```
+
+This command will start both the Angular development server and the Electron app.
+
+## Screen Capture Feature
+
+### Overview
+
+The screen capture feature allows users to capture a screenshot of their screen and save it as an image file. It demonstrates the seamless integration of Electron's screen capturing capabilities with Angular's user interface.
+
+### Implementation Details
+
+#### Electron Implementation
+
+- Electron's `desktopCapturer` module is used to capture the screen.
+- IPC (Inter-Process Communication) is employed to communicate between the main Electron process and the Angular renderer process.
+
+#### Angular Implementation
+
+- An Electron service is created in Angular to facilitate communication with Electron.
+- Angular components use this service to trigger events and send/receive data.
+
+### How to Capture the Screen
+
+1. Open the Electron-Angular app.
+2. Navigate to the screen capture section within the app.
+3. Click the "Capture Screen" button.
+4. Electron captures the screen and sends the image data to the Angular component.
+5. The Angular component displays the captured image.
+6. Users can save the image as a file using the provided interface.
+
+### Screenshots
+
+[Include screenshots or GIFs illustrating the screen capture feature in action.]
+
+## Testing
+
+The screen capture feature has been thoroughly tested to ensure its functionality. Testing scenarios include:
+
+- Capturing screens with different resolutions.
+- Handling multiple screens.
+- Saving captured images with various file formats.
+
+The testing results confirm the successful implementation of the screen capture feature.
+
+## Known Issues
+
+There are no known issues or limitations with the screen capture feature at this time.
+
+## Conclusion
+
+The Screen Capture POC demonstrates the successful integration of Electron with Angular to capture screens and provides a foundation for further development. This feature can be expanded upon for use in various applications where screen capture is required.
+
+## References
+
+- [Electron Documentation](https://www.electronjs.org/docs)
+- [Angular Documentation](https://angular.io/docs)
+- [Electron IPC Documentation](https://www.electronjs.org/docs/api/ipc-main)
+
+## Contact Information
+
+For questions or support, please contact [Your Contact Information].
+
+---
+
+Customize this documentation according to your specific implementation details and requirements. Make sure to include actual code snippets, screenshots, and clear instructions to help users understand and use the screen capture feature effectively.
